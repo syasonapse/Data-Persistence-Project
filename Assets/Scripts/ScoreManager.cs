@@ -6,6 +6,8 @@ using System.IO;
 
 public class ScoreManager : MonoBehaviour
 {
+    public int userScore = 0;
+    public string userName = "";
     public int bestScore = 0;
     public string bestScoreName = "";
 
@@ -32,9 +34,11 @@ public class ScoreManager : MonoBehaviour
 
     public void UpdateScore(int score)
     {
-        if (bestScore < score)
+        userScore = score;
+        if (bestScore < userScore)
         {
-            bestScore = score;
+            bestScore = userScore;
+            bestScoreName = userName;
         }
     }
 
